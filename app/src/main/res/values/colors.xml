@@ -9,7 +9,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FDBF21</color>
     <color name="blue">#1D35B5</color>
-    <color name="red">#EB2C61</color>
-    <color name="green">#25C6C2</color>
+    <color name="pink">#EB2C61</color>
+    <color name="cyan">#25C6C2</color>
+    <color name="red">#EF4444</color>
+
 
 </resources>
