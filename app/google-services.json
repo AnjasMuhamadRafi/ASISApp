@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "106519996376",
+    "project_id": "asis-project-e41b3",
+    "storage_bucket": "asis-project-e41b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:106519996376:android:24c5c0566d86dbe19774ad",
+        "android_client_info": {
+          "package_name": "com.atreus.asisapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "106519996376-5nrt0ian3vt11lv81cp2bu104gjh7lap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.atreus.asisapp",
+            "certificate_hash": "e7d63882ecc543bf498f26d70e1066ef36772e6f"
+          }
+        },
+        {
+          "client_id": "106519996376-2t3668c5ktdtogd78ai3jn23vrg69ohe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYmbOlTuJMg1TKobDoLvBg7VAHDWM3mn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "106519996376-2t3668c5ktdtogd78ai3jn23vrg69ohe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_viewPagerFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
@@ -31,4 +34,9 @@
         android:name="com.atreus.asisapp.Home.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.atreus.asisapp.Account.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
 </navigation>

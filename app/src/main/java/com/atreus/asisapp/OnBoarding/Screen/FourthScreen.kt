@@ -29,7 +29,7 @@ class FourthScreen : Fragment() {
         }
 
         view.findViewById<TextView>(R.id.finish).setOnClickListener {
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeActivity)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_loginActivity)
             OnBoardingFinished()
         }
 

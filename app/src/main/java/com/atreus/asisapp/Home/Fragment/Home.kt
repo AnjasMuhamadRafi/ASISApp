@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import com.atreus.asisapp.R
-import com.atreus.asisapp.TestPomo
 
 
 class Home : Fragment() {
@@ -25,11 +24,7 @@ class Home : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val cvpomo : CardView = view.findViewById(R.id.Cv_Pomo)
-        cvpomo.setOnClickListener {
-            val CVpomo = Intent(this@Home.activity, TestPomo::class.java)
-            startActivity(CVpomo)
-        }
+
 
     }
 
