@@ -3,10 +3,10 @@ package com.atreus.asisapp.home
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.atreus.asisapp.home.Fragment.Habit
-import com.atreus.asisapp.home.Fragment.Home
-import com.atreus.asisapp.home.Fragment.Profile
-import com.atreus.asisapp.home.Fragment.Work
+import com.atreus.asisapp.home.fragment.Habit
+import com.atreus.asisapp.home.fragment.Home
+import com.atreus.asisapp.home.fragment.Profile
+import com.atreus.asisapp.home.fragment.Work
 import com.atreus.asisapp.R
 import com.atreus.asisapp.databinding.ActivityHomeBinding
 
