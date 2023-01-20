@@ -13,29 +13,42 @@
         android:theme="@style/Theme.ASISApp"
         tools:targetApi="31">
         <activity
-            android:name=".Account.ForgotPasswordActivity"
+            android:name=".BreakPomoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Account.RegisterActivity"
+            android:name=".PomoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Account.LoginActivity"
+            android:name=".account.ForgotPasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <activity
-            android:name=".Home.HomeActivity"
+            android:name=".account.RegisterActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".account.LoginActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".home.HomeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
