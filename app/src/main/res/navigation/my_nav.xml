@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.atreus.asisapp.OnBoarding.ViewPagerFragment"
+        android:name="com.atreus.asisapp.onboarding.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <activity
         android:id="@+id/homeActivity"
-        android:name="com.atreus.asisapp.Home.HomeActivity"
+        android:name="com.atreus.asisapp.home.HomeActivity"
         android:label="activity_home"
         tools:layout="@layout/activity_home" />
     <activity
         android:id="@+id/loginActivity"
-        android:name="com.atreus.asisapp.Account.LoginActivity"
+        android:name="com.atreus.asisapp.account.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/activity_login" />
 </navigation>
