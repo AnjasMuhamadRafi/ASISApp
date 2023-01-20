@@ -1,4 +1,4 @@
-package com.atreus.asisapp.home.Fragment
+package com.atreus.asisapp.home.fragment
 
 import android.content.Intent
 import android.os.Bundle
