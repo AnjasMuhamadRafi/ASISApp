@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/habit_nav"
+    app:startDestination="@id/habitTrack">
+    <fragment
+        android:id="@+id/habitTrack"
+        android:name="com.example.nyobahabitroom.HabitTrack"
+        android:label="Habit Track"
+        tools:layout="@layout/fragment_habit_track" >
+        <action
+            android:id="@+id/action_habitTrack_to_habitDetail"
+            app:destination="@id/habitDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/habitList"
+        android:name="com.example.nyobahabitroom.HabitList"
+        android:label="HabitList"
+        tools:layout="@layout/fragment_habit_list" />
+    <fragment
+        android:id="@+id/habitDetail"
+        android:name="com.example.nyobahabitroom.HabitDetailActivity"
+        android:label="Habit Detail"
+        tools:layout="@layout/fragment_habit_detail" >
+        <action
+            android:id="@+id/action_habitDetail_to_habitList"
+            app:destination="@id/habitList" />
+    </fragment>
+</navigation>

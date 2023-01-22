@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/G"
+    android:id="@+id/fragmentnih">
+
+    <TextView
+        android:id="@+id/textView_habitdetail_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/ivDetailHabit"
+        android:layout_width="170dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/textView_habitdetail"
+        android:layout_width="296dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Drink water at least 2 liter of water every day regularly to keep the body well hydrated."
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivDetailHabit" />
+
+    <LinearLayout
+        android:layout_width="328dp"
+        android:layout_height="504dp"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_habitdetail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/desc_cardbox_item">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/desc_detailhabit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Description"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"/>
+
+            <EditText
+                android:id="@+id/desc_detailhabit_edit"
+                android:layout_width="296dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:textSize="10sp"
+                android:fontFamily="@font/poppins"
+                android:textColor="@color/black"
+                android:inputType="textMultiLine"
+                android:background="@drawable/desc_descriptionbox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc_detailhabit"/>
+
+            <RelativeLayout
+                android:id="@+id/desc_group_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc_detailhabit_edit">
+
+                <TextView
+                    android:id="@+id/desc_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Quantity"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="14sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"/>
+
+                <ImageButton
+                    android:id="@+id/desc_quantity_decrease"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/imgbtn_reminder_custom"
+                    android:src="@drawable/ic_baseline_remove_24"
+                    app:icon="@drawable/ic_baseline_remove_24"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@id/desc_quantity"/>
+
+                <TextView
+                    android:id="@+id/desc_quantity_value"
+                    android:layout_width="50dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:gravity="center"
+                    android:background="@drawable/button_quantity_value"
+                    android:layout_below="@id/desc_quantity"
+                    android:layout_toRightOf="@id/desc_quantity_decrease"/>
+
+                <ImageButton
+                    android:id="@+id/desc_quantity_increase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:icon="@drawable/ic_baseline_add_24"
+                    android:background="@drawable/imgbtn_reminder_custom"
+                    android:src="@drawable/ic_baseline_add_24"
+                    android:layout_below="@id/desc_quantity"
+                    android:layout_toRightOf="@id/desc_quantity_value"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/desc_group_repeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/desc_group_quantity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/desc_group_reminder">
+
+                <TextView
+                    android:id="@+id/desc_repeaton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:text="Repeat on"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="14sp"
+                    android:textColor="@color/black"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Monday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:text="Mon"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textSize="10sp"
+                    android:textColor="@drawable/text_color"
+                    android:textAlignment="center"
+                    android:button="@android:color/transparent"
+                    android:layout_below="@id/desc_repeaton"
+                    android:layout_alignParentStart="true"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Tuesday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="28dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Tue"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeaton"
+                    android:layout_toRightOf="@id/desc_repeatday_Monday"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Wednesday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Wed"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeaton"
+                    android:layout_toRightOf="@id/desc_repeatday_Tuesday"
+                    android:layout_toLeftOf="@id/desc_repeatday_Thursday"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Thursday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginEnd="28dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Thu"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeaton"
+                    android:layout_toLeftOf="@id/desc_repeatday_Friday"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Friday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Fri"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeaton"
+                    android:layout_alignParentEnd="true"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Saturday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Sat"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeatday_Monday"/>
+
+                <CheckBox
+                    android:id="@+id/desc_repeatday_Sunday"
+                    android:layout_width="37dp"
+                    android:layout_height="37dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="28dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Sun"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_repeatday_Tuesday"
+                    android:layout_toRightOf="@id/desc_repeatday_Saturday" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/desc_group_reminder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/desc_btnsave">
+
+                <TextView
+                    android:id="@+id/desc_reminder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Reminder at"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"/>
+
+                <CheckBox
+                    android:id="@+id/desc_reminder_08"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/checkbox_selector_time"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="08.00"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_reminder"
+                    android:layout_alignParentStart="true"/>
+
+                <CheckBox
+                    android:id="@+id/desc_reminder_12"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:background="@drawable/checkbox_selector_time"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="12.00"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_reminder"
+                    android:layout_toRightOf="@id/desc_reminder_08"/>
+
+                <CheckBox
+                    android:id="@+id/desc_reminder_14"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/checkbox_selector_time"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="14.00"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_reminder"
+                    android:layout_toRightOf="@id/desc_reminder_12"
+                    android:layout_toLeftOf="@id/desc_reminder_16"/>
+
+                <CheckBox
+                    android:id="@+id/desc_reminder_16"
+                    android:layout_width="45dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="15dp"
+                    android:background="@drawable/checkbox_selector_time"
+                    android:button="@android:color/transparent"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="16.00"
+                    android:textAlignment="center"
+                    android:textColor="@drawable/text_color"
+                    android:textSize="10sp"
+                    android:layout_below="@id/desc_reminder"
+                    android:layout_toLeftOf="@id/desc_reminder_custom"/>
+
+                <ImageButton
+                    android:id="@+id/desc_reminder_custom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="35dp"
+                    android:background="@drawable/imgbtn_reminder_custom"
+                    android:src="@drawable/ic_baseline_add_24"
+                    android:layout_below="@id/desc_reminder"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/desc_btnsave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="Add"
+                android:backgroundTint="@color/P"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:fontFamily="@font/poppins_bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
