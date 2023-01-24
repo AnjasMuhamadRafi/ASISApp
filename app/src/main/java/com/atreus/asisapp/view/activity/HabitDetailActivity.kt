@@ -1,20 +1,19 @@
-package com.example.nyobahabitroom
-
+package com.atreus.asisapp.view.activity
 import android.annotation.SuppressLint
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import com.atreus.asisapp.R
+import com.atreus.asisapp.data.model.HabitData
+import com.atreus.asisapp.view.fragment.HabitList
+import com.atreus.asisapp.view.fragment.HabitTrack
+import com.atreus.asisapp.viewmodel.HabitViewModel
 
-class HabitDetailActivity(var habit: Habit?) : AppCompatActivity() {
+class HabitDetailActivity : AppCompatActivity() {
 
     private lateinit var habitViewModel: HabitViewModel
 
@@ -27,7 +26,7 @@ class HabitDetailActivity(var habit: Habit?) : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_habit_detail)
         supportActionBar?.hide()
-        val habit = intent.getParcelableExtra<Habit>(HabitList.INTENT_PARCELABLE)
+        val habit = intent.getParcelableExtra<HabitData>(HabitList.INTENT_PARCELABLE)
 
         val habitTitle = findViewById<TextView>(R.id.textView_habitdetail_title)
         habitTitle.text = habit?.title
@@ -74,7 +73,7 @@ class HabitDetailActivity(var habit: Habit?) : AppCompatActivity() {
 //        val habitImg = findViewById<ImageView>(R.id.ivDetailHabit)
 //        val habitDescription = findViewById<TextView>(R.id.textView_habitdetail)
 //        val quantity = findViewById<TextView>(R.id.desc_quantity_value)
-//        habitViewModel.addHabits(Habit(0, habitTitle.text.toString(), habitImg.id.toInt(), habitDescription.text.toString(), quantity.toString().toInt()))
+//        habitViewModel.addHabits(HabitData(0, habitTitle.text.toString(), habitImg.id.toInt(), habitDescription.text.toString(), quantity.toString().toInt()))
 //    }
 }
 

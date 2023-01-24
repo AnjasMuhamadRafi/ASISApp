@@ -1,4 +1,4 @@
-package com.example.nyobahabitroom
+package com.atreus.asisapp.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,21 +7,23 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.atreus.asisapp.R
+import com.atreus.asisapp.data.model.HabitData
 
 class HabitListAdapter(
     private val context: FragmentActivity?,
-    private val habit: List<Habit>,
-    private val listener: (Habit) -> Unit
+    private val habit: List<HabitData>,
+    private val listener: (HabitData) -> Unit
 ): RecyclerView.Adapter<HabitListAdapter.HabitViewHolder>() {
     class HabitViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val habitImg = view.findViewById<ImageView>(R.id.rv_imageViewList)
         val habitTitle = view.findViewById<TextView>(R.id.rv_tvHabitList)
 
-        fun bindView(Habit: Habit, listener: (Habit) -> Unit) {
-            habitImg.setImageResource(Habit.image)
-            habitTitle.text = Habit.title
+        fun bindView(HabitData: HabitData, listener: (HabitData) -> Unit) {
+            habitImg.setImageResource(HabitData.image)
+            habitTitle.text = HabitData.title
             itemView.setOnClickListener {
-                listener(Habit)
+                listener(HabitData)
             }
         }
 

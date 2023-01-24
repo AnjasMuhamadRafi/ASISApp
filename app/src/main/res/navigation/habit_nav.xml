@@ -6,8 +6,8 @@
     app:startDestination="@id/habitTrack">
     <fragment
         android:id="@+id/habitTrack"
-        android:name="com.example.nyobahabitroom.HabitTrack"
-        android:label="Habit Track"
+        android:name="com.atreus.asisapp.view.fragment.HabitTrack"
+        android:label="HabitData Track"
         tools:layout="@layout/fragment_habit_track" >
         <action
             android:id="@+id/action_habitTrack_to_habitDetail"
@@ -15,16 +15,16 @@
     </fragment>
     <fragment
         android:id="@+id/habitList"
-        android:name="com.example.nyobahabitroom.HabitList"
+        android:name="com.atreus.asisapp.view.fragment.HabitList"
         android:label="HabitList"
         tools:layout="@layout/fragment_habit_list" />
-    <fragment
+    <activity
         android:id="@+id/habitDetail"
-        android:name="com.example.nyobahabitroom.HabitDetailActivity"
-        android:label="Habit Detail"
+        android:name="com.atreus.asisapp.view.activity.HabitDetailActivity"
+        android:label="HabitData Detail"
         tools:layout="@layout/fragment_habit_detail" >
         <action
             android:id="@+id/action_habitDetail_to_habitList"
             app:destination="@id/habitList" />
-    </fragment>
+    </activity>
 </navigation>

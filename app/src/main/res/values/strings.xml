@@ -1,8 +1,12 @@
 <resources>
     <string name="app_name">ASIS App</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!--    Costume String   -->
     <string name="underline"><u>Next</u> </string>
+    <string name="place_holder">Place Holder</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="descritiontask">Set your work or daily schedule with subtask to inform your detail schedule for one task</string>
+    <string name="desctasktext">Set your work or daily schedule with subtask to inform your detail schedule for one task</string>
+
 </resources>

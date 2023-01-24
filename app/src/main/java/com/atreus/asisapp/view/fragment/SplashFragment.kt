@@ -1,4 +1,4 @@
-package com.atreus.asisapp
+package com.atreus.asisapp.view.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-
+import com.atreus.asisapp.R
 
 
 class SplashFragment : Fragment() {
