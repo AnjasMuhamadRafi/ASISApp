@@ -1,12 +1,25 @@
 package com.atreus.asisapp.viewmodel
 
+import android.app.Application
 import androidx.lifecycle.*
+import com.atreus.asisapp.data.AsisRepository
+import com.atreus.asisapp.data.database.AsisDatabase
+import com.atreus.asisapp.data.model.TaskItem
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.time.LocalDate
 
-class TaskViewModel(private val repository: TaskItemRepository): ViewModel()
-{
-    val taskItems: LiveData<List<TaskItem>> = repository.allTaskItems.asLiveData()
+class TaskViewModel(application: Application): AndroidViewModel(application) {
+
+    public val taskItems : LiveData<List<TaskItem>>
+    private val repository : AsisRepository
+
+    init {
+        val taskItemDao = AsisDatabase.getDatabase(application).taskItemDao()
+        val habitDao = AsisDatabase.getDatabase(application).habitDao()
+        repository = AsisRepository(taskItemDao, habitDao)
+        taskItems = repository.getAllTasks()
+    }
 
     fun addTaskItem(taskItem: TaskItem) = viewModelScope.launch {
         repository.insertTaskItem(taskItem)
@@ -20,16 +33,5 @@ class TaskViewModel(private val repository: TaskItemRepository): ViewModel()
         if (!taskItem.isCompleted())
             taskItem.completedDateString = TaskItem.dateFormatter.format(LocalDate.now())
         repository.updateTaskItem(taskItem)
-    }
-}
-
-class TaskItemModelFactory(private val repository: TaskItemRepository) : ViewModelProvider.Factory
-{
-    override fun <T : ViewModel> create(modelClass: Class<T>): T
-    {
-        if (modelClass.isAssignableFrom(TaskViewModel::class.java))
-            return TaskViewModel(repository) as T
-
-        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

@@ -1,4 +1,4 @@
-package com.atreus.asisapp
+package com.atreus.asisapp.view.activity
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.VideoView
+import com.atreus.asisapp.R
 
 class SplashScreen : AppCompatActivity() {
     var videoView: VideoView? = null

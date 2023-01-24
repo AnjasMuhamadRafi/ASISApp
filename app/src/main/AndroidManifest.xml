@@ -20,6 +20,13 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".view.activity.HabitDetailActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".pomodoro.PomoActivity"
             android:exported="false">
             <meta-data
@@ -55,7 +62,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".SplashScreen"
+            android:name=".view.activity.SplashScreen"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
@@ -68,7 +75,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.MainActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

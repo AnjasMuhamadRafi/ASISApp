@@ -1,8 +1,9 @@
-package com.atreus.asisapp
+package com.atreus.asisapp.view.activity
 
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.atreus.asisapp.R
 
 
 class MainActivity : AppCompatActivity() {

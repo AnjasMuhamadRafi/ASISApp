@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.atreus.asisapp.R
 
-
 class Habit : Fragment() {
 
     override fun onCreateView(
@@ -17,6 +16,4 @@ class Habit : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_habit, container, false)
     }
-
-
 }

@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.atreus.asisapp.SplashFragment"
+        android:name="com.atreus.asisapp.view.fragment.SplashFragment"
         android:label="fragment_splash2"
         tools:layout="@layout/fragment_splash2" >
         <action
