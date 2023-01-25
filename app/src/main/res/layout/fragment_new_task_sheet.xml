@@ -1,114 +1,394 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#1D35B5"
+    android:fillViewport="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/addtaskcharacter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:src="@drawable/taskkarakter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textadd"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="21dp"
-        android:text="Set your work or daily schedule with subtask to inform your detail schedule for one task"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtaskcharacter" />
-
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/white"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textadd"
-        tools:context=".NewTaskSheet"
-        tools:ignore="MissingConstraints">
+        android:background="#1D35B5"
+        app:layout_constraintCircleRadius="20dp">
+
+        <ImageView
+            android:id="@+id/addtaskcharacter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/taskkarakter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/taskTitle"
             style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="12dp"
             android:text="New Task"
-            android:textSize="30sp" />
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/addtaskcharacter"
+            app:layout_constraintEnd_toEndOf="@+id/addtaskcharacter"
+            app:layout_constraintStart_toStartOf="@+id/addtaskcharacter"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <TextView
+            android:id="@+id/textadd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="32dp"
+            android:text="@string/desctasktext"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addtaskcharacter" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp">
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textadd">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Name" />
+                android:background="@drawable/vector_task"
+                android:gravity="center|top"
+                android:hint="create task"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        <LinearLayout
+            android:id="@+id/taskscroll"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="10dp">
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/desc"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Description">
+                android:background="@color/white">
 
-            </com.google.android.material.textfield.TextInputEditText>
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/timePickerButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginHorizontal="20dp"
-            android:text="Select Time" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/saveButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:layout_marginHorizontal="20dp"
-            android:backgroundTint="?attr/colorPrimary"
-            android:text="Save"
-            android:textColor="?colorOnPrimary" />
-
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/starttime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Start"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@+id/datePickerButton"
+                    app:layout_constraintStart_toStartOf="@+id/datePickerButton"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/starttime2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="End"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="@+id/datePickerButton2"
+                    app:layout_constraintStart_toStartOf="@+id/datePickerButton2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/timePickerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:hint="Select Time"
+                    android:textColorHint="@color/blue"
+                    android:paddingHorizontal="17dp"
+                    android:paddingVertical="17dp"
+                    android:background="@drawable/vectortimeranddate"
+                    app:layout_constraintEnd_toEndOf="@+id/datePickerButton"
+                    app:layout_constraintStart_toStartOf="@+id/datePickerButton"
+                    app:layout_constraintTop_toBottomOf="@+id/datePickerButton" />
+
+                <TextView
+                    android:id="@+id/datePickerButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="33dp"
+                    android:background="@drawable/vectortimeranddate"
+                    android:hint="22 jan 2023"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="8dp"
+                    android:textColorHint="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/starttime2" />
+
+                <TextView
+                    android:id="@+id/datePickerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="11dp"
+                    android:background="@drawable/vectortimeranddate"
+                    android:hint="22 jan 2023"
+                    android:paddingHorizontal="9dp"
+                    android:paddingVertical="8dp"
+                    android:textColorHint="@color/blue"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/starttime" />
+
+                <TextView
+                    android:id="@+id/timePickerButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/vectortimeranddate"
+                    android:hint="Select Time"
+                    android:paddingHorizontal="17dp"
+                    android:paddingVertical="17dp"
+                    android:textColorHint="@color/blue"
+                    app:layout_constraintEnd_toEndOf="@+id/datePickerButton2"
+                    app:layout_constraintStart_toStartOf="@+id/datePickerButton2"
+                    app:layout_constraintTop_toBottomOf="@+id/datePickerButton2" />
+
+                <TextView
+                    android:id="@+id/allday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="All Day"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/timePickerButton" />
+
+                <TextView
+                    android:id="@+id/prioritytask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Priority"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/allday" />
+
+                <LinearLayout
+                    android:id="@+id/prioritytasklvl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/prioritytask">
+
+                    <TextView
+                        android:id="@+id/priority1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:layout_marginRight="14dp"
+                        android:background="@drawable/vector_priority"/>
+                    <TextView
+                        android:id="@+id/priority2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="II"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:backgroundTint="#FDBF21"
+                        android:layout_marginRight="14dp"
+                        android:background="@drawable/vector_priority"/>
+                    <TextView
+                        android:id="@+id/priority3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="III"
+                        android:gravity="center"
+                        android:backgroundTint="#1D35B5"
+                        android:layout_marginRight="14dp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/vector_priority"/>
+                    <TextView
+                        android:id="@+id/priority4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="IV"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:backgroundTint="#25C6C2"
+                        android:background="@drawable/vector_priority"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/repeattask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Repeat"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/prioritytasklvl" />
+
+                <TextView
+                    android:id="@+id/alertTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Alert"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/repeattask" />
+
+                <TextView
+                    android:id="@+id/notesTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Notes"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/alertTask" />
+
+
+                <TextView
+                    android:id="@+id/subTask"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Sub Task"
+                    android:textColor="@color/blue"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textinputdesc" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textinputdesc"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="10dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="#1D35B51A"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/notesTask">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Description">
+
+                    </com.google.android.material.textfield.TextInputEditText>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/saveButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/yellow"
+                    android:text="Save"
+                    android:textColor="?colorOnPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subTask" />
+
+                <Switch
+                    android:id="@+id/switchAllDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/allday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/allday"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <Switch
+                    android:id="@+id/switchRepeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/repeattask"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/repeattask"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+                <Switch
+                    android:id="@+id/switchAlert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/alertTask"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/alertTask"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
