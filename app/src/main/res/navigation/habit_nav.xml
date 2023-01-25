@@ -18,7 +18,7 @@
         android:name="com.atreus.asisapp.view.fragment.HabitList"
         android:label="HabitList"
         tools:layout="@layout/fragment_habit_list" />
-    <activity
+    <fragment
         android:id="@+id/habitDetail"
         android:name="com.atreus.asisapp.view.activity.HabitDetailActivity"
         android:label="HabitData Detail"
@@ -26,5 +26,5 @@
         <action
             android:id="@+id/action_habitDetail_to_habitList"
             app:destination="@id/habitList" />
-    </activity>
+    </fragment>
 </navigation>
