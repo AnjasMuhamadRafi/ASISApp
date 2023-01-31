@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "106519996376",
+    "firebase_url": "https://asis-project-e41b3-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "asis-project-e41b3",
     "storage_bucket": "asis-project-e41b3.appspot.com"
   },
@@ -22,7 +23,7 @@
           }
         },
         {
-          "client_id": "106519996376-2t3668c5ktdtogd78ai3jn23vrg69ohe.apps.googleusercontent.com",
+          "client_id": "106519996376-fa461gadd8b5m0trds74segk9tac7108.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

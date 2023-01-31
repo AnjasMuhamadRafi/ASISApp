@@ -7,21 +7,40 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.atreus.asisapp.databinding.FragmentHomeBinding
+import com.atreus.asisapp.databinding.FragmentProfileBinding
 import com.atreus.asisapp.pomodoro.PomoActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class Home : Fragment() {
+
+    private var _binding : FragmentHomeBinding? = null
+    lateinit var auth: FirebaseAuth
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        val bind = FragmentHomeBinding.inflate(layoutInflater)
-
-        bind.CvPomo.setOnClickListener{
-            val intent = Intent (this@Home.requireContext(), PomoActivity::class.java)
-            startActivity(intent)
-        }
-        return bind.root
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    //Code untuk memanggil data firebase, email, username, logout
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
+
+        if (user != null){
+            binding.textviewname.setText(user.displayName)
+        }
+    }
+
 }

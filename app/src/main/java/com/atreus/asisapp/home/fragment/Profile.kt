@@ -2,18 +2,17 @@ package com.atreus.asisapp.home.fragment
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.atreus.asisapp.account.LoginActivity
-
 import com.atreus.asisapp.databinding.FragmentProfileBinding
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 
 
 class Profile : Fragment() {
-
 
     private var _binding : FragmentProfileBinding? = null
     lateinit var auth: FirebaseAuth
@@ -33,6 +32,7 @@ class Profile : Fragment() {
         _binding = null
     }
 
+    //Code untuk memanggil data firebase, email, username, logout
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -49,6 +49,7 @@ class Profile : Fragment() {
         }
     }
 
+    //Logout user
     private fun btnLogout() {
         auth = FirebaseAuth.getInstance()
         auth.signOut()
